@@ -1,5 +1,7 @@
-# craft-scripts
-Shell scripts to manage permissions, asset syncing, and database syncing between Craft CMS environments
+# craft-scripts fork by vcao
+The original set of shell scripts are designed to manage permissions, asset syncing, and database syncing between Craft CMS environments. The original code was developed by [nystudio107](https://nystudio107.com/) 
+
+I've added the ability to ssh into virtualized environments or your staging server. The issue I experienced was that I couldn't run mysql commands on a host machine; I actually need to do it on the virtualized development environment. I need to run the commands from the host machine, since I'm not in the virtualized environment 24/7.
 
 ## Overview
 
@@ -49,6 +51,10 @@ All settings that are prefaced with `LOCAL_` refer to the local environment wher
 
 `LOCAL_ASSETS_DIRS` is a quoted list of asset directories relative to `LOCAL_ASSETS_PATH` that you want to pull down from the remote server. It's done this way in case you wish to sync some asset directories, but not others. If you want to pull down all asset directories in `LOCAL_ASSETS_PATH`, just leave one blank quoted string in this array
 
+`LOCAL_SSH_LOGIN` is your ssh login to your local development server (e.g. Vagrant). For a Vagrant setup it's often vagrant@IP_ADDRESS. FYI your development server should be able to connect to your production server via passwordless SSH. 
+
+`LOCAL_SSH_PORT`is the port to use for ssh on the development server. This is normally `22`
+
 `LOCAL_DB_NAME` is the name of the local mysql Craft CMS database
 
 `LOCAL_DB_PASSWORD` is the password for the local mysql Craft CMS database
@@ -83,8 +89,10 @@ All settings that are prefaced with `REMOTE_` refer to the remote environment wh
 
 ## Craft-Scripts Changelog
 
-### 1.0.0 -- 2016.12.05
+### 1.0.1 -- 2017.01.20
 
-* [Added] Initial release
+* [Added] Forked release
 
-Brought to you by [nystudio107](https://nystudio107.com/)
+Original code brought to you by [nystudio107](https://nystudio107.com/) 
+
+Forked by Victor Cao

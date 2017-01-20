@@ -32,9 +32,13 @@ LOCAL_ASSETS_DIRS=(
                 ""
                 )
 
+# Local development server for virtualized setups e.g. Vagrant
+LOCAL_SSH_LOGIN="REPLACE_ME"
+LOCAL_SSH_PASSWORD="REPLACE_ME"
+LOCAL_SSH_PORT="22"
+
 # Local database constants
 LOCAL_DB_NAME="REPLACE_ME"
-LOCAL_DB_PASSWORD="REPLACE_ME"
 LOCAL_DB_USER="REPLACE_ME"
 
 # These are here for MAMP, which requires a full path to the `mysql` executable inside the application package
